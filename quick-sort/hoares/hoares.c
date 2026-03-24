@@ -7,18 +7,18 @@ void quickSort(int* list, int low, int high);
 void swap(int* a, int* b);
 
 int main(){
-    int arr[] = {5,7,4,3,6,8,9,1,2,10};
+    int arr[] = {10,40,70,40,30,60,80,20,50};
 
     printf("before sort: ");
-    for(int i = 0; i < 10; i++){
+    for(int i = 0; i < 9; i++){
         printf("%d ", arr[i]);
     }
     printf("\n");
 
-    quickSort(arr, 0, 9);
+    quickSort(arr, 0, 8);
 
     printf("after sort: ");
-    for(int i = 0; i < 10; i++){
+    for(int i = 0; i < 9; i++){
         printf("%d ", arr[i]);
     }
 }
@@ -27,8 +27,8 @@ void quickSort(int* list, int low, int high){
     if(low < high){
         int pivot = partition(list, low, high);
 
-        quickSort(list, low, pivot);
-        quickSort(list, pivot + 1, high);
+        quickSort(list, low, pivot); //
+        quickSort(list, pivot+1, high);
     }
 }
 
@@ -37,7 +37,7 @@ int partition(int* list, int low, int high){
 
     int i = low - 1;
     int j = high + 1;
-    
+
     while(1){
         while(i < high && list[++i] < pivot);
         while(j > low && list[--j] > pivot);
@@ -53,3 +53,11 @@ void swap(int* a, int* b){
 }
 
 
+
+
+
+
+
+int main(){
+
+}
